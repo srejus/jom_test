@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index Page</h1>
+    {% for todo in tds %}
+    <h5>TITLE : {{todo.title}}</h5>
+    {% endfor %}
+
+    <form action="/home" method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="Enter Todo Title" name="title">
+        <input type="text" placeholder="Enter Desc.." name="desc">
+        <button>submit</button>
+    </form>
+</body>
+</html>
